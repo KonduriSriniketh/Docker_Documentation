@@ -1,19 +1,22 @@
-# Docker_Documentation
 
-##  Docker Commands
+##  Docker Commands Documentation
 
 ### Pull Image
-`` docker image pull <image_name>``
+``docker image pull <image_name>``
 ### List docker images 
 ``` dokcer images ```
 ### Remove / delete image
 Just delete an image. This does not work if a container is already created with that image, even if it has stopped.
   
-``` docker image rm <image_name> ```
+~~~
+ docker image rm <image_name>
+~~~
 
 To force remove the image.
 
-``` dokcer image rm -f <image_name> ```
+~~~
+ dokcer image rm -f <image_name>
+~~~
 
 ### To run image as a container
 this comands just runs and exits.
@@ -31,7 +34,9 @@ docker run -it <image_name>
 
 To run an image as a container with custom name
 
-``` docker run --name <your_container_name> <image_name> ```
+~~~
+ docker run --name <your_container_name> <image_name>
+~~~
 
 ### List docker containers
 
@@ -44,7 +49,9 @@ docker ps
 
 To list all the containers 
 
-``` docker ps -a ```
+~~~
+docker ps -a
+~~~
 
 ### To start/ stop a container
 
@@ -60,17 +67,31 @@ docker container stop <container_name>
 ### Remove container container
 - to remove a container
 
-``` docker container rm <container_name> ```
+~~~
+docker container rm <container_name>
+~~~
 
 ### Open new terminal for existing container
 
-``` docker exec -it <container_name> ```
+~~~
+docker exec -it <container_name>
+~~~
 
 - to remove all the containers
 
-``` docker container prune ```
+~~~
+docker container prune
+~~~
 
 ### To build an image
 to build an image for with custom name
 
-``` docker image build -t <my_image_name> <path_to_dockerfile> ```
+~~~
+docker image build -t <my_image_name> <path_to_dockerfile>
+~~~
+
+### To mount 
+
+~~~
+docker run -it -v <abs_path_on_host>:<abs_path_in_container>
+~~~
